@@ -27,9 +27,9 @@ def contact(request):
     return render(request,"school_front/Contact.html")  
 
 def training(request):
-    course = Courses.objects.all()
+    courses = Courses.objects.all()
     context = {
-        'courses' : course,
+        'courses' : courses,
     }
     return render(request,"school_front/courses.html",context)     
 
@@ -40,4 +40,8 @@ def services(request):
     return render(request,"school_front/service.html")    
 
 def courses(request):
-    return render(request,"school_front/course.html")          
+    courses = Courses.objects.all()
+    context = {
+        'courses' : courses,
+    }
+    return render(request,"school_front/course.html",context)            

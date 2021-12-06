@@ -115,7 +115,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav navbar-togglable rounded-radius">
 
                 <a class="navbar-brand d-lg-none d-block" href="{% url 'home' %}">
-                    <h4>Rapoo</h4>
+                    <h4>Cohs</h4>
                 </a>
                 <!-- Toggler -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,24 +126,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Links -->
                     <ul class="navbar-nav ">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="navbarWelcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item ">
+                            <a href="{%  url 'home' %}" class="nav-link js-scroll-trigger">
                                 Home
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarWelcome">
-                                 <a class="dropdown-item " href="index.html">
-                                    Home-1
-                                </a>
-                                <a class="dropdown-item " href="index-2.html">
-                                    Home-2
-                                </a> 
-                                <a class="dropdown-item " href="index-3.html">
-                                    Home-3
-                                </a>
-                                <a class="dropdown-item " href="index-4.html">
-                                    Home-4
-                                </a>
-                            </div>
                         </li>
                         <li class="nav-item ">
                             <a href="{%  url 'about' %}" class="nav-link js-scroll-trigger">
@@ -158,12 +144,6 @@
                         <li class="nav-item ">
                             <a href="{% url 'courses' %}" class="nav-link js-scroll-trigger">
                                 Courses
-                            </a>
-                        </li>
-
-                        <li class="nav-item ">
-                            <a href="{% url 'courses' %}" class="nav-link js-scroll-trigger">
-                                Projects
                             </a>
                         </li>
 
