@@ -30,7 +30,7 @@
                             {%  for course in courses %}
                             <div class="test-inner ">
                                <div class="test-author-thumb d-flex">
-                                   <img src="{{  course.Course_thumbnail.url }}" alt="Testimonial author" class="img-fluid">
+                                   <img src="{{ course.course_thumbnail.url }}" alt="Testimonial author" class="img-fluid">
                                    <div class="test-author-info">
                                        <h4>{{ course.name }}</h4>
                                        <h6>3 years</h6>
@@ -39,7 +39,7 @@
 
                                {{ course.description }}
                                 <i class="fa fa-quote-right"></i> <br>
-                                <a href="#" class="read-more">Read More</a>
+                                <a href="{%   url 'course_detail' course.id %}" class="read-more">Read More</a>
                             </div>
                             {%  endfor %}
                         </div>
@@ -60,7 +60,7 @@
                     <div class="section-heading">
                         <!-- Heading -->
                         <h2 class="section-title">
-                            Meet Our Teaching Stuff
+                            Meet Our  Stuff
                         </h2>
 
                         <!-- Subheading -->
@@ -85,7 +85,7 @@
                                     <h3 class="card-title">Industial Health expect</h3>
                                 </a>
                                 <p>There are many variations of passages Lorem Ipsum available, but majority have ama suffered altratio. the lorem.</p>
-                                <a href="#" class="read-more">Read More</a>
+                                <a href="" class="read-more">Read More</a>
                             </div>
                         </div>
                     </div>

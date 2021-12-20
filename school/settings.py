@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f$#mc27+6-qhno)5!%(0@bl*#5_=$7e_c$o)&(*+2$i9-xs4nv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.cohs.education']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'school_front',
+    'crispy_forms',
    
 ]
 
@@ -131,5 +132,6 @@ MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 STATIC_URL="/static/"
-STATIC_ROOT=os.path.join(BASE_DIR,"static")
-
+#STATIC_ROOT=os.path.join(BASE_DIR,"static")
+#production
+STATIC_ROOT='/home/mpamba/cohs/static'
