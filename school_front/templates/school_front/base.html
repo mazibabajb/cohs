@@ -8,10 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="minding your safety is our business">
   <meta name="keywords" content="Occupational health, safety,environment,risk assessment,nurse aid,hazchem">
+  <link rel="shortcut icon" href="{% static '/school_front/images/favicon.jpg' %}" type="image/x-icon">
   
   <meta name="author" content="">
 
-  <title>COH&S &amp; home</title>
+  <title>COH&S </title>
 
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="{% static '/school_front/plugins/bootstrap/css/bootstrap.min.css' %}">
@@ -136,7 +137,7 @@
                                 Courses
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarWelcome">
-                                 <a class="dropdown-item " href="{% url 'courses' %}">
+                                 <a class="dropdown-item " href="{% url 'cpd' %}">
                                     CPD TRAINING
                                 </a>
                                 <a class="dropdown-item " href="{% url 'diploma_courses' %}">
@@ -158,6 +159,18 @@
                             </a>
                         </li>
 
+                        
+                        <li class="nav-item ">
+                            <a href="{% url 'centres' %}" class="nav-link">
+                                Centres
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="{% url 'membership' %}" class="nav-link">
+                                membership
+                            </a>
+                        </li>
+                        
                         <li class="nav-item ">
                             <a href="{% url 'contact' %}" class="nav-link">
                                 Contact
@@ -209,6 +222,12 @@
                                 Privacy policy
                             </a>
                         </li>
+                        <li>
+                            <a href="#">
+                                Verify
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

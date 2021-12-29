@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from.models import Course,Contact_us,Module
+from.models import *
 from.models import RegistrationForm
 
 # Create your views here.
@@ -25,12 +25,7 @@ def contact(request):
         messages.success(request, 'Thank you for contacting us your message has been received')
     return render(request,"school_front/contact.html")      
 
-def training(request):
-    courses = Course.objects.filter(category='cpd')
-    context = {
-        'courses' : courses, 
-    }
-    return render(request,"school_front/courses.html",context)     
+ 
 
 def about(request):
     return render(request,"school_front/About.html")    
@@ -38,12 +33,12 @@ def about(request):
 def services(request):
     return render(request,"school_front/service.html")    
 
-def courses(request):
-    courses = Course.objects.filter(category='cpd')
+def cpd(request):
+    courses = Course.objects.filter(category='cpd_training')
     context = {
         'courses' : courses,
     }
-    return render(request,"school_front/course.html",context)     
+    return render(request,"school_front/cpd.html",context)     
 
 
 def diploma_courses(request):
@@ -69,6 +64,28 @@ def course_detail(request, id):
         'modules': modules
 	}
     return render(request,"school_front/course_detail.html",context)    
+
+def membership(request):
+    return render(request,"school_front/membership.html")
+
+def centres(request):
+    return render(request,"school_front/centres.html")
+
+
+def verify(request):
+    
+    certificate_number = request.POST.get("certificate_number")
+
+    certificate = Verication.objects.filter(certificate_number=certificate_number) 
+    if certificate  != certificate_number:
+        messages.error(request,"The certtficate could not be found")
+    else:
+        messages.success(request,"This is an authentic cohs certificate")
+        
+    return render(request,"school_front/verify.html")
+
+
+    
 
 
 def registration(request):

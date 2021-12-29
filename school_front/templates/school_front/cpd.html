@@ -1,0 +1,118 @@
+{% extends 'school_front/base.html' %}
+{% block content %}
+{% load static  %}
+
+
+   <!-- HERO
+    ================================================== -->
+    <section class="page-banner-area page-about">
+        <div class="overlay"></div>
+        <!-- Content -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-md-12 col-12 text-center">
+                    <div class="page-banner-content">
+                        <h1 class="display-4 font-weight-bold">Our CPD TRAINING</h1>
+                        <p>CPD refers to activities that develop and maintain capabilities to enable
+                            members to perform competently within their professional environments. 
+                            The COH&S is a Professional Body and as such has obligations to foster 
+                            a commitment to lifelong learning and development amongst its members as 
+                            a key component of professionalism. The COH&S is required to monitor and 
+                            enforce standards that ensure the continuous development and maintenance 
+                            of professional competence of its members. The objective of a CPD programme
+                             is to assist members to develop and maintain professional competence in
+                              order to ensure high ethical and professional standards delivered through 
+                              the sector to the general public.
+
+                           .</p>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+<section class="section" id="section-testimonial">
+        <div class="container">
+           <div class="row align-items-center">
+            <div class="single-blog">
+                <h1>Verifiable CPD</h1>
+                <p>Verifiable CPD is CPD for which proof of completion/participation is available, for example, 
+                    but not limited to, attendance registers, reading registers, or such other manner of proof as may be determined by the Board from time to time, 
+                    that can be submitted to the COH&S upon auditing of a member’s CPD points.</p>
+                    <h1>Non Verifiable CPD</h1>
+                <p>This is CPD which will comprise reading for which the member will account using 
+                    the Register of Professional Reading includes any other activity that the designate considers
+                     to be of value in meeting the definition of CPD as above. This may include:</p>
+                     
+                         <div class="blog-content">
+                         
+                                 <li>Management training and</li>
+                                 <li>Life skills training and development</li>
+                                  
+                         </div>
+                         
+                              <hr>
+                         <h1>INTRODUCTION</h1>
+                         <p>COH&S is a private Professional Body for the Health and Safety. It is a members’ 
+                             organisation which awards designations based on the attainment of prescribed academic levels.
+                              Once a professional designation is attained by a member, s/he needs to maintain the status by
+                               ensuring compliance with the following requirements:</p>   
+                               <div class="blog-content">
+                         
+                                 <li>Maintenance of annual membership of the COHS;</li>
+                                 <li>Subscription to the Code of Professional Conduct of the COH&S.</li>
+                                 <li>Compliance with the CPD requirements – as prescribed by the COH&; and,</li>
+                                  
+                         </div><br>
+                         <p>Continuous Professional Development (CPD) is a process of lifelong learning whereby an
+                              individual systematically engages in activities that maintain abilities, skills and
+                               knowledge required for a professional health and safety services field and as guided by the
+                              competency requirements. And COH&S’s Code of Professional Conduct.</p>
+                              <br>
+                         <p><b> CPD</b> refers to activities that develop and maintain capabilities to enable members to
+                              perform competently within their professional environments.</p>
+ 
+                              <h1>RESPONSIBILITY FOR COMPETENCE</h1>
+                              <p>The primary responsibility for competence lies with the member and all members have an obligation to develop and 
+                                  maintain their professional competence, relevant to the nature of their work and professional responsibilities. 
+                                  All the members carrying an COH&S designation must maintain a record of their CPD 
+                                  activities and report the hours completed relevant to each reporting cycle. CPD is compulsory and is applicable to all members.</p> 
+                                  <h1>CPD TRAINING PROGRAMS</h1>  
+                                  <br>
+                                  
+                   </div>
+                <div class="col-lg-12 col-sm-12 col-md-12">
+                    <div class="row">
+                       
+                        
+                        <div class="col-lg-12">
+                            {%  for course in courses %}
+                            <div class="test-inner ">
+                               <div class="test-author-thumb d-flex">
+                                   <img src="{{  course.course_thumbnail.url }}" alt="course_thumbnail" class="img-fluid">
+                                   <div class="test-author-info">
+                                       <h4>{{ course.name }}</h4>
+                                       <h6>3 years</h6>
+                                   </div>
+                               </div>
+
+                               {{ course.description }}
+                                </i> <br>
+                                <a href="{%   url 'course_detail' course.id %}" class="read-more">Read More</a>
+                            </div>
+                            {%  endfor %}
+                        </div>
+                        
+                    </div>
+                    
+                 
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+ {% endblock content %}

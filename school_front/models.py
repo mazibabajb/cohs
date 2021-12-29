@@ -5,14 +5,14 @@ from django.db import models
 
 # Create your models here.
 class Course(models.Model):
-    course_category = (
-     ('cpd ', 'cpd'),
+    course_category = (  
+     ('cpd_training', 'cpd_training'),
      ('diploma', 'diploma'),
      ('short', 'short'),
      )
     category = models.CharField(
         choices=course_category,
-        default='cpd',
+        default='diploma',
         max_length=30)
     course_thumbnail = models.ImageField(upload_to='cars',default='default.png')    
     name = models.CharField(max_length=40)
@@ -55,4 +55,9 @@ class RegistrationForm(models.Model):
 
     def __str__(self):
         return self.first_name
-    
+
+
+class Verication(models.Model):
+    certificate_number = models.IntegerField()
+    student_name = models.CharField(max_length=100)
+    course_name = models.CharField(max_length=20)

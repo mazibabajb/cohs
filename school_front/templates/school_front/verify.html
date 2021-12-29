@@ -1,0 +1,75 @@
+{% extends 'school_front/base.html' %}
+{% block content %}
+{% load static  %}
+
+
+   <!-- HERO
+    ================================================== -->
+
+               
+ <section class="section" id="blog">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 text-center">
+                    <div class="section-heading">
+                        <!-- Heading -->
+                        <h2 class="section-title">
+                        Welcome to cohs Verification Centre
+                        </h2>
+
+                        <!-- Subheading -->
+                        
+                    <!-- Heading -->
+                    
+                    {% if messages %}
+                    {% for message in messages  %}
+                    {% if message.tags == "success" %}
+                  <div class="alert alert-success">
+                    {{message}}
+                  </div>
+                  {% endif %}
+                  {% if message.tags == "error" %}
+                  <div class="alert alert-danger">
+                    {{ message}}
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+                  <div class="row">
+                      <div class="col-lg-12 justify-content-center">
+                         
+                          <!-- Contacts Form -->
+                          <form class="contact_form justify-content-center" action="#" method="POST">
+                              {% csrf_token %} 
+                              <div class="row">
+                                  <!-- Input -->
+                                  <div class="col-lg-8 mb-6">
+                                      <div class="form-group">
+                                          <label class="h6 small d-block text-uppercase">
+                                               Enter Certificate Number
+                                              <span class="text-danger">*</span>
+                                          </label>
+      
+                                          <div class="input-group">
+                                              <input class="form-control" name="name" id="name" title="name" required="" placeholder="Certificate Number" type="text">
+                                          </div>
+                                          
+                                      </div>
+                                      <div class="">
+                                        <input name="submit" type="submit" class="btn btn-primary btn-circled" value="Verify">
+                                        
+                                         
+                                     </div>
+                                  </div>
+                              </div>
+                          </form>
+                 
+                </div>
+            </div>
+            </div> <!-- / .row -->
+
+            </div>
+        </div>
+    </section>
+
+ {% endblock content %}
