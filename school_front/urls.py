@@ -12,6 +12,7 @@ urlpatterns = [
     path('membership', views.membership,name='membership'),
     path('centres', views.centres,name='centres'),
     path('verify', views.verify,name='verify'),
+    path('verification_page', views.verification_page,name='verification_page'),
     path('short_courses', views.short_courses,name='short_courses'),
     path('registation', views.registration,name='registraton'),
     path('course_detail/<int:id>/',views.course_detail, name="course_detail"),

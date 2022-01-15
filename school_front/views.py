@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from.models import *
@@ -7,8 +8,10 @@ from.models import RegistrationForm
 def home(request):
     return render(request,"school_front/index.html")
 
+
 def events(request):
-    return render(request,"school_front/events.html")   
+    return render(request,"school_front/events.html") 
+
 
 def contact(request):
     if request.method == 'POST':
@@ -28,10 +31,12 @@ def contact(request):
  
 
 def about(request):
-    return render(request,"school_front/About.html")    
+    return render(request,"school_front/About.html")   
+
 
 def services(request):
     return render(request,"school_front/service.html")    
+
 
 def cpd(request):
     courses = Course.objects.filter(category='cpd_training')
@@ -39,6 +44,7 @@ def cpd(request):
         'courses' : courses,
     }
     return render(request,"school_front/cpd.html",context)     
+
 
 
 def diploma_courses(request):
@@ -49,12 +55,14 @@ def diploma_courses(request):
     return render(request,"school_front/diploma_course.html",context)    
 
 
+
 def short_courses(request):
     courses = Course.objects.filter(category='short')
     context = {
         'courses' : courses,
     }
     return render(request,"school_front/short_course.html",context)    
+
 
 def course_detail(request, id):
     modules = Module.objects.all()
@@ -73,19 +81,17 @@ def centres(request):
 
 
 def verify(request):
-    
-    certificate_number = request.POST.get("certificate_number")
-
-    certificate = Verication.objects.filter(certificate_number=certificate_number) 
-    if certificate  != certificate_number:
-        messages.error(request,"The certtficate could not be found")
+    certificate = request.POST['name']
+    if Verication.objects.filter(certificate_number=certificate):
+        messages.success(request,"Certificate " + certificate + " is an  authentic cohs certificate" )
     else:
-        messages.success(request,"This is an authentic cohs certificate")
-        
+        messages.error(request,"Certificate " + certificate + " could not be found")
     return render(request,"school_front/verify.html")
 
 
-    
+def verification_page(request):
+    return render(request,"school_front/verify.html")
+
 
 
 def registration(request):

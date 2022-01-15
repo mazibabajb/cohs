@@ -39,7 +39,7 @@
                       <div class="col-lg-12 justify-content-center">
                          
                           <!-- Contacts Form -->
-                          <form class="contact_form justify-content-center" action="#" method="POST">
+                          <form class="contact_form justify-content-center" action="{% url 'verify' %}" method="POST">
                               {% csrf_token %} 
                               <div class="row">
                                   <!-- Input -->
@@ -51,7 +51,7 @@
                                           </label>
       
                                           <div class="input-group">
-                                              <input class="form-control" name="name" id="name" title="name" required="" placeholder="Certificate Number" type="text">
+                                              <input class="form-control" name="name" id="name" title="name" required="" placeholder="Certificate Number" type="int">
                                           </div>
                                           
                                       </div>

@@ -58,6 +58,14 @@ class RegistrationForm(models.Model):
 
 
 class Verication(models.Model):
-    certificate_number = models.IntegerField()
+    certificate_number = models.CharField(max_length=20)
     student_name = models.CharField(max_length=100)
     course_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.student_name
+
+
+
+
+
